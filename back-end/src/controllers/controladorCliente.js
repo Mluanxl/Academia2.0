@@ -1,4 +1,4 @@
-const Produto = require('../models/modeloProduto.js');
+const Produto = require('../models/modeloCliente.js');
 const { Op } = require('sequelize');
 
 const criarProduto = async (req, res) => {
