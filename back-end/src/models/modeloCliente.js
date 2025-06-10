@@ -1,32 +1,35 @@
 const { DataTypes } = require('sequelize');
 const sequelize = require('../database/dbConfig.js');
 
-const Produto = sequelize.define('Produto', {
+const Cliente = sequelize.define('Cliente', {
   nome: {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  preco: {
-    type: DataTypes.DECIMAL(10, 2),
+  sobrenome: {
+    type: DataTypes.STRING,
     allowNull: false,
   },
-  codigo_barras: {
-    type: DataTypes.BIGINT,
-    allowNull: false,
-    unique: true,
-  },
-  quantidade: {
-    type: DataTypes.INTEGER,
+  data_nascimento: {
+    type: DataTypes.DATEONLY,
     allowNull: false,
   },
-  descricao: {
-    type: DataTypes.TEXT,
+  cpf: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  email: {
+    type: DataTypes.STRING,
     allowNull: true,
   },
-  imagemUrl: {
+  telefone: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  genero: {
     type: DataTypes.STRING,
     allowNull: true,
   }
 });
 
-module.exports = Produto;
+module.exports = Cliente;

@@ -1,13 +1,13 @@
-const Produto = require('../models/modeloCliente.js');
+const Cliente = require('../models/modeloCliente.js');
 const { Op } = require('sequelize');
 
-const criarProduto = async (req, res) => {
+const criarCliente = async (req, res) => {
   try {
     const { nome, preco, codigo_barras, quantidade, descricao, imagemUrl, criarLote , lote } = req.body;
 
     if ( criarLote ){
       lote.forEach(async p => {
-        const novoProduto = await Produto.create({ 
+        const novoCliente = await Cliente.create({ 
           nome: p.nome,
           preco: p.preco,
           codigo_barras: p.codigo_barras,
@@ -16,10 +16,10 @@ const criarProduto = async (req, res) => {
           imagemUrl: p.imagemUrl 
         });
       });
-      res.status(201).json({"res": "Produtos cadastrados!"})
+      res.status(201).json({"res": "Clientes cadastrados!"})
     } else {
-      const novoProduto = await Produto.create({ nome, preco, codigo_barras, quantidade, descricao, imagemUrl });
-      res.status(201).json(novoProduto);
+      const novoCliente = await Cliente.create({ nome, preco, codigo_barras, quantidade, descricao, imagemUrl });
+      res.status(201).json(novoCliente);
     }
 
   } catch (error) {
@@ -27,74 +27,74 @@ const criarProduto = async (req, res) => {
   }
 };
 
-const obterProduto = async (req, res) => {
+const obterCliente = async (req, res) => {
   try {
 
     console.log(req.body)
 
-    const idProduto = req.query  ? req.query .idProduto : false;
+    const idCliente = req.query  ? req.query .idCliente : false;
     const nome = req.query? req.query.nome : false;
 
 
-    if (idProduto) {
-      const produto = await Produto.findByPk(idProduto)
-      res.json(produto);
+    if (idCliente) {
+      const cliente = await Cliente.findByPk(idCliente)
+      res.json(cliente);
     }else if(nome){
-      const produtos = await Produto.findAll({ where: { nome: { [Op.like]: `%${nome}%` } } });
-      res.json(produtos);
+      const clientes = await Cliente.findAll({ where: { nome: { [Op.like]: `%${nome}%` } } });
+      res.json(clientes);
     }else{
-      const produtos = await Produto.findAll();
-      res.json(produtos);
+      const clientes = await Cliente.findAll();
+      res.json(clientes);
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
 
-const apagarProduto = async (req, res) => {
+const apagarCliente = async (req, res) => {
   try {
-    const {idProduto} = req.body;
+    const {idCliente} = req.body;
 
-    if (!idProduto) throw new Error('ID é obrigatorio');
+    if (!idCliente) throw new Error('ID é obrigatorio');
     
-    const produto = await Produto.findByPk(idProduto);
+    const cliente = await Cliente.findByPk(idCliente);
 
-    if (!produto) throw new Error('Produto não encontrado');
+    if (!cliente) throw new Error('Cliente não encontrado');
 
-    produto.destroy({
+    cliente.destroy({
       where: {
-        id: idProduto,
+        id: idCliente,
       },
     });
     
-    res.status(201).json(produto);
+    res.status(201).json(cliente);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
-const editarProduto = async (req, res) => {
+const editarCliente = async (req, res) => {
   try {
-    const {idProduto, nomeProduto, precoProduto, codigo_barras, quantidade, descricao, imagemUrl} = req.body;
+    const {idCliente, nomeCliente, precoCliente, codigo_barras, quantidade, descricao, imagemUrl} = req.body;
 
     console.log('req.body',req.body)
-    if (!idProduto && !nomeProduto && !precoProduto) throw new Error('Campos obrigatorios não foram preenchidos');
-    const produto = await Produto.findByPk(idProduto);
+    if (!idCliente && !nomeCliente && !precoCliente) throw new Error('Campos obrigatorios não foram preenchidos');
+    const cliente = await Cliente.findByPk(idCliente);
 
-    if (!produto) throw new Error('Produto não encontrado');
+    if (!cliente) throw new Error('Cliente não encontrado');
 
-    produto.update({ 
-      nome: nomeProduto || produto.nome, 
-      preco: precoProduto || produto.preco,
-      codigo_barras: codigo_barras || produto.codigo_barras, 
-      quantidade: quantidade || produto.quantidade, 
-      descricao: descricao || produto.descricao, 
-      imagemUrl: imagemUrl || produto.imagemUrl
+    cliente.update({ 
+      nome: nomeCliente || cliente.nome, 
+      preco: precoCliente || cliente.preco,
+      codigo_barras: codigo_barras || cliente.codigo_barras, 
+      quantidade: quantidade || cliente.quantidade, 
+      descricao: descricao || cliente.descricao, 
+      imagemUrl: imagemUrl || cliente.imagemUrl
     })
 
-    res.status(201).json(produto);
+    res.status(201).json(cliente);
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
 };
 
-module.exports = { criarProduto , obterProduto, editarProduto, apagarProduto }
+module.exports = { criarCliente , obterCliente, editarCliente, apagarCliente }

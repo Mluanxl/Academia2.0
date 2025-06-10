@@ -1,12 +1,12 @@
 const express = require('express');
-const controladorProduto = require('../controllers/controladorCliente.js');
+const controladorCliente = require('../controllers/controladorCliente.js');
 
 const router = express.Router();
 
-router.post('/produto', controladorProduto.criarProduto);
-router.get('/produto', controladorProduto.obterProduto);
-router.put('/produto', controladorProduto.editarProduto);
-router.delete('/produto', controladorProduto.apagarProduto);
+router.post('/cliente', controladorCliente.criarCliente);
+router.get('/cliente', controladorCliente.obterCliente);
+router.put('/cliente', controladorCliente.editarCliente);
+router.delete('/cliente', controladorCliente.apagarCliente);
 
 
 module.exports = router;
