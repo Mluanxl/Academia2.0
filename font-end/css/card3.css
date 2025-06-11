@@ -95,7 +95,7 @@ body {
 .cCarousel-item {
     width: 300px;
     min-height: 490px; 
-    border: 2px solid rgb(211, 211, 211);
+    
     border-radius: 15px;
     overflow: hidden;
     display: flex;
