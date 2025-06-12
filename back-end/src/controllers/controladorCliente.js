@@ -3,24 +3,10 @@ const { Op } = require('sequelize');
 
 const criarCliente = async (req, res) => {
   try {
-    const { nome, preco, codigo_barras, quantidade, descricao, imagemUrl, criarLote , lote } = req.body;
+    const { nome, sobrenome, data_nascimento, cpf, email, celular, plano, plano_extra} = req.body;
 
-    if ( criarLote ){
-      lote.forEach(async p => {
-        const novoCliente = await Cliente.create({ 
-          nome: p.nome,
-          preco: p.preco,
-          codigo_barras: p.codigo_barras,
-          quantidade: p.quantidade,
-          descricao: p.descricao,
-          imagemUrl: p.imagemUrl 
-        });
-      });
-      res.status(201).json({"res": "Clientes cadastrados!"})
-    } else {
-      const novoCliente = await Cliente.create({ nome, preco, codigo_barras, quantidade, descricao, imagemUrl });
+      const novoCliente = await Cliente.create({ nome, sobrenome, data_nascimento, cpf, email, celular, plano, plano_extra });
       res.status(201).json(novoCliente);
-    }
 
   } catch (error) {
     res.status(400).json({ error: error.message });
