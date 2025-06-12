@@ -20,15 +20,23 @@ const Cliente = sequelize.define('Cliente', {
   },
   email: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   },
   telefone: {
+    type: DataTypes.STRING,
+    allowNull: false,
+  },
+  plano: {
+    type: DataTypes.STRING,
+    allowNull: true,
+  },
+  plano_extra: {
     type: DataTypes.STRING,
     allowNull: true,
   },
   genero: {
     type: DataTypes.STRING,
-    allowNull: true,
+    allowNull: false,
   }
 });
 
