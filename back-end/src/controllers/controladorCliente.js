@@ -3,10 +3,15 @@ const { Op } = require('sequelize');
 
 const criarCliente = async (req, res) => {
   try {
-    const { nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra} = req.body;
+    const { nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra, genero} = req.body;
 
-      const novoCliente = await Cliente.create({ nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra });
-      res.status(201).json(novoCliente);
+      const novoCliente = await Cliente.create({ nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra, genero });
+      res.status(201).send(`<div class="container">
+        <h1>Cliente cadastrado com sucesso!</h1>
+        <a href="http://127.0.0.1:5500/font-end/index.html">
+            <button>Voltar à Página Inicial</button>
+        </a>
+    </div>`);
 
   } catch (error) {
     res.status(400).json({ error: error.message });

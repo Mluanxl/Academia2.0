@@ -36,7 +36,7 @@ const Cliente = sequelize.define('Cliente', {
   },
   genero: {
     type: DataTypes.STRING,
-    allowNull: false,
+    allowNull: true,
   }
 });
 
