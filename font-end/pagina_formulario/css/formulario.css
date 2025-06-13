@@ -1,0 +1,102 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #fff;
+    color: #222;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #eee;
+  }
+  
+  header img {
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  main {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+  
+  h1 {
+    font-size: 32px;
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 15px;
+    font-size: 14px;
+  }
+  
+  input, select {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 4px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .telefone {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .telefone label {
+    flex: 1;
+  }
+  
+  fieldset {
+    border: none;
+    margin: 20px 0;
+    gap: 20px;
+  }
+
+  .genero-opcoes {
+    display: flex;
+    gap: 20px;
+    margin-top: 8px;
+  }
+  
+  .genero-opcoes label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  
+  legend {
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox {
+    margin: 20px 0;
+  }
+  
+  button {
+    background-color: #eca02f;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+
+
+
+  
+  
