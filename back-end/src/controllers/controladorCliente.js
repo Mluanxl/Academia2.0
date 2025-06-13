@@ -3,9 +3,9 @@ const { Op } = require('sequelize');
 
 const criarCliente = async (req, res) => {
   try {
-    const { nome, sobrenome, data_nascimento, cpf, email, celular, plano, plano_extra} = req.body;
+    const { nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra} = req.body;
 
-      const novoCliente = await Cliente.create({ nome, sobrenome, data_nascimento, cpf, email, celular, plano, plano_extra });
+      const novoCliente = await Cliente.create({ nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra });
       res.status(201).json(novoCliente);
 
   } catch (error) {
