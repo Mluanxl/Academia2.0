@@ -37,6 +37,10 @@ const Cliente = sequelize.define('Cliente', {
   genero: {
     type: DataTypes.STRING,
     allowNull: true,
+  },
+   preco: {
+    type: DataTypes.FLOAT,  
+    allowNull: false,     
   }
 });
 

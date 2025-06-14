@@ -63,31 +63,34 @@
                 <label>Celular* <input id="telefone" name="telefone" type="tel" maxlength="15" required></label>
             </div>
 
-            <label>Planos*
-                <select name="plano" required>
-                    <option value="Plano Black">Plano Black</option>
-                    <option value="Plano Fit">Plano Fit</option>
-                    <option value="Plano Smart">Plano Smart</option>
-                </select>
-            </label>
+            <label>Planos*</label>
+            <select name="plano" id="plano" required onchange="calcularPreco()">
+                <option value="Plano Black" data-preco="149.99">Plano Black - R$ 149,99</option>
+                <option value="Plano Fit" data-preco="99.99">Plano Fit - R$ 99,99</option>
+                <option value="Plano Smart" data-preco="119.99">Plano Smart - R$ 119,99</option>
+            </select>
 
-            <label>Planos Extras*
-                <select name="plano_extra" required>
-                    <option value="Nenhum">Nenhum</option>
-                    <option value="Acompanhamento">Acompanhamento Personalizado de Treino</option>
-                    <option value="Bebidas">Bebidas esportivas e energéticas em sabores</option>
-                    <option value="Bioimpedância">Evoulução corporal com nossa Bioimpedância</option>
-                    <option value="Suplementos">Suplementos para acelerar seus resultados</option>
-                </select>
-            </label>
-
+            <label>Plano Extra*</label>
+            <select name="plano_extra" id="plano_extra" onchange="calcularPreco()">
+                <option value="Nenhum" data-preco="0.00">Nenhum - R$ 0,00</option>
+                <option value="Acompanhamento" data-preco="39.90">Acompanhamento - R$ 39,90</option>
+                <option value="Bebidas" data-preco="24.90">Bebidas - R$ 24,90</option>
+                <option value="Bioimpedância" data-preco="19.90">Bioimpedância - R$ 19,90</option>
+                <option value="Suplementos" data-preco="19.90">Suplementos - R$ 19,90</option>
+            </select>
             <fieldset>
+                
                 <legend>Gênero</legend>
                 <div class="genero-opcoes">
                     <label><input type="radio" name="genero" value="Masculino" required> Masculino</label>
                     <label><input type="radio" name="genero" value="Feminino"> Feminino</label>
                 </div>
             </fieldset>
+
+
+            <input type="hidden" name="preco" id="preco" value="0.00">
+
+            <p id="preco-total">Preço Total: R$ 0.00</p>
 
             <button type="submit">CRIAR CONTA</button>
         </form>

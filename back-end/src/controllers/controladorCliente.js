@@ -5,15 +5,14 @@ const { Op } = require('sequelize');
 const criarCliente = async (req, res) => {
   try {
     const {
-      nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra, genero } = req.body;
+      nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra, genero, preco } = req.body;
 
     if (!nome || !sobrenome || !cpf || !email) {
       return res.status(400).json({ error: 'Campos obrigatórios faltando: nome, sobrenome, cpf ou email' });
     }
 
     const novoCliente = await Cliente.create({
-      nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra, genero
-    });
+      nome, sobrenome, data_nascimento, cpf, email, telefone, plano, plano_extra, genero, preco });
 
     res.status(201).send(`
     <!DOCTYPE html>
