@@ -1,3 +1,43 @@
+
+const precosPlanos = {
+    "Plano Black": 149.99,
+    "Plano Fit": 99.99,
+    "Plano Smart": 119.99
+};
+
+const precosExtras = {
+    "Nenhum": 0.00,
+    "Acompanhamento": 39.90,
+    "Bebidas": 24.90,
+    "Bioimpedância": 19.90,
+    "Suplementos": 19.90
+};
+
+
+function calcularPreco() {
+    const planoSelecionado = document.getElementById('plano').value;
+    const planoExtraSelecionado = document.getElementById('plano_extra').value;
+
+    const precoPlano = precosPlanos[planoSelecionado];
+    const precoExtra = precosExtras[planoExtraSelecionado];
+
+    const precoTotal = precoPlano + precoExtra;
+
+
+    document.getElementById('preco').value = precoTotal.toFixed(2);
+
+
+    document.getElementById('preco-total').textContent = `Preço Total: R$ ${precoTotal.toFixed(2)}`;
+}
+
+
+document.getElementById('plano').addEventListener('change', calcularPreco);
+document.getElementById('plano_extra').addEventListener('change', calcularPreco);
+
+
+calcularPreco();
+
+
 // Formatacao de nome
 const nomeInput = document.getElementById('nome');
 

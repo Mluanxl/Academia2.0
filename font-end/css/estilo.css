@@ -1,99 +1,109 @@
 * {
-    font-family: Arial, Helvetica, sans-serif;
-    box-sizing: border-box;
-  }
-  
-  .container-geral {
-    padding: 0 20px;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  #logo1 {
-    height: auto;
-    width: 180px;
-    padding-left: 15px;
-  }
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
-  #logo2 {
-    height: auto;
-    width: 140px;
-  }
-  
-  #ficar_amarelo {
-    position: relative;
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
-  }
-  
-  #ficar_amarelo:hover {
-    color: #FF6F00;
-    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
-    transform: translateY(-2px);
-  }
-  
-  #frase_1 {
-    font-size: 30px;
-    text-align: center;
-    margin: 30px 0;
-  }
-  
-  #estilo_frase {
-    color: #fad14a;
-  }
-  
-  #imagem_1,
-  #imagem_2 {
-    width: 100%;
-    border-radius: 40px;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-  
-  .imagem-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 40px;
-    margin-top: 20px;
-  }
-  
-  #escolher_academia {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    color: black;
-    padding: 15px 40px;
-    border-radius: 50px;
-    font-size: 18px;
-    text-decoration: none;
-    border: none;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  #escolher_academia:hover {
-    background-color: #000000;
-    color: white;
-  }
-  
-  #estilo_p_1, 
-  #estilo_p_2{
-    font-size: 15px;
-  }
+.container-geral {
+  padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
-  #estilo_p_2{
-    text-align: center;
-  }
+#logo1 {
+  height: auto;
+  width: 180px;
+  padding-left: 15px;
+}
 
-  #buscar_academia{
-    text-decoration: none;
-    padding: 15px 80px;
-    border-radius: 50px;
-    background-color: #fad14a;
-    color: black;
-    font-size: 16px;
-    font-weight: bold;
-  }
+#logo2 {
+  height: auto;
+  width: 140px;
+}
+
+#ficar_amarelo {
+  position: relative;
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+#ficar_amarelo:hover {
+  color: #FF6F00;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.8), 0 0 10px rgba(255, 255, 255, 0.6);
+  transform: translateY(-2px);
+}
+
+#frase_1 {
+  font-size: 30px;
+  text-align: center;
+  margin: 30px 0;
+}
+
+#estilo_frase {
+  color: #fad14a;
+}
+
+#imagem_1 {
+  width: 100%;
+  border-radius: 40px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+#imagem_2 {
+  width: 100%;
+  border-radius: 40px;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.imagem-container {
+  position: relative;
+  overflow: hidden;
+  border-radius: 40px;
+  margin-top: 20px;
+}
+
+#escolher_academia {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  color: black;
+  padding: 15px 40px;
+  border-radius: 50px;
+  font-size: 18px;
+  text-decoration: none;
+  border: none;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#escolher_academia:hover {
+  background-color: #000000;
+  color: white;
+}
+
+#estilo_p_1 {
+  font-size: 15px;
+}
+
+#estilo_p_2 {
+  font-size: 15px;
+  text-align: center;
+}
+
+#buscar_academia {
+  text-decoration: none;
+  padding: 15px 80px;
+  border-radius: 50px;
+  background-color: #fad14a;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+}
+
