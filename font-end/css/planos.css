@@ -4,38 +4,38 @@
     gap: 20px;
     padding: 30px;
     font-family: 'Segoe UI', sans-serif;
-}
-
-.card {
+  }
+  
+  .card {
     width: 300px;
     border-radius: 16px;
     padding: 25px;
     box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-
-.card h2 {
+  }
+  
+  .card h2 {
     font-size: 20px;
     margin-bottom: 10px;
-}
-
-.card .desc {
+  }
+  
+  .card .desc {
     font-size: 14px;
     margin-bottom: 15px;
-}
-
-.card .preco {
+  }
+  
+  .card .preco {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
-}
-
-.card .preco span {
+  }
+  
+  .card .preco span {
     display: block;
     font-size: 14px;
     font-weight: normal;
-}
-
-.card button {
+  }
+  
+  .card button {
     background-color: #FFC72C;
     color: black;
     border: none;
@@ -44,45 +44,45 @@
     border-radius: 30px;
     font-weight: bold;
     margin: 15px 0;
-}
-
-.card ul {
+  }
+  
+  .card ul {
     list-style: none;
     padding: 0;
-}
-
-.card li {
+  }
+  
+  .card li {
     margin: 8px 0;
     padding-left: 24px;
     position: relative;
     font-size: 14px;
-}
-
-.card li.ok::before {
+  }
+  
+  .card li.ok::before {
     content: "✔";
     color: green;
     position: absolute;
     left: 0;
-}
-
-.card li.no::before {
+  }
+  
+  .card li.no::before {
     content: "✘";
     color: gray;
     position: absolute;
     left: 0;
-}
-
-.card.black {
+  }
+  
+  .card.black {
     background-color: #383838;
     color: white;
-}
-
-.card.white {
+  }
+  
+  .card.white {
     background-color: white;
     color: black;
-}
-
-.mais-vantajoso {
+  }
+  
+  .mais-vantajoso {
     background-color: #eb9f64;
     color: black;
     font-weight: bold;
@@ -92,8 +92,10 @@
     margin-bottom: 15px;
     font-size: 13px;
     margin-top: -45px;
-}
-
-.card li.no {
+  }
+  
+  .card li.no {
     text-decoration: line-through;
-}
+  }
+  
+  
