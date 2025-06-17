@@ -17,14 +17,17 @@ const Cliente = sequelize.define('Cliente', {
   cpf: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
   telefone: {
     type: DataTypes.STRING,
     allowNull: false,
+    unique: true,
   },
   plano: {
     type: DataTypes.STRING,
